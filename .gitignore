@@ -1,0 +1,52 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment and secrets
+.env
+.env.*
+**/.env
+**/.env.*
+!.env.example
+!.env.sample
+
+# Build outputs
+dist/
+build/
+coverage/
+.vite/
+*.tsbuildinfo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime / temp files
+tmp/
+temp/
+*.tmp
+*.pid
+*.pid.lock
+*.seed
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editors / IDE
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local binaries that should not be committed
+Client/src/assets/Images/*.exe

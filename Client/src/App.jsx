@@ -9,8 +9,7 @@ import { setUserData } from "./redux/userSlice";
 export const ServerUrl = "http://localhost:8500";
 
 function App() {
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const getUser = async () => {
@@ -18,14 +17,16 @@ function App() {
         const result = await axios.get(ServerUrl + "/api/user/current-user", {
           withCredentials: true,
         });
-        dispatch(setUserData(result.data))
+        dispatch(setUserData(result.data));
       } catch (error) {
-        console.log(error);
-        dispatch(setUserData(null))
+        if (error?.response?.status !== 401) {
+          console.log(error);
+        }
+        dispatch(setUserData(null));
       }
     };
     getUser();
-  }, []);
+  }, [dispatch]);
 
   return (
     <Routes>
